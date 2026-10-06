@@ -3,7 +3,7 @@
 // =============================
 // Escribe aquí el número de WhatsApp con indicativo de país.
 // Colombia: 57 + número. Ejemplo: "573001234567"
-const WHATSAPP_NUMBER = "";
+const WHATSAPP_NUMBER = "573237127014";
 
 const menu = [
   {
