@@ -1,66 +1,44 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#ffb718">
-  <meta name="description" content="Menú digital de Donde Nacha Fast Food">
-  <title>Donde Nacha · Fast Food</title>
-  <link rel="icon" href="logo.png">
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffb300"><meta name="description" content="Menú digital de Nacha Fast Food">
+<title>Nacha Fast Food · Menú</title><link rel="icon" href="logo.png"><link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="hero__drip"></div>
-    <div class="hero__content">
-      <img class="brand-logo" src="logo.png" alt="Donde Nacha Fast Food">
-      <div>
-        <p class="eyebrow">FAST FOOD</p>
-        <h1>Menú</h1>
-        <p class="hero__subtitle">Elige tu favorito y arma tu pedido.</p>
-      </div>
-    </div>
-  </header>
+<header class="hero"><div class="hero__drip"></div><div class="hero__content">
+<img class="brand-logo" src="logo.png" alt="Nacha Fast Food">
+<div><p class="eyebrow">FAST FOOD</p><h1>Nacha<br>Fast Food</h1><p class="hero__subtitle">Arma tu pedido a tu gusto.</p></div>
+</div></header>
+<main class="container">
+<div class="toolbar"><label class="search"><span>⌕</span><input id="search" type="search" placeholder="Buscar en el menú..." autocomplete="off"></label>
+<button id="cartButton" class="cart-button" type="button">🛒 <span>Pedido</span> <b id="cartCount">0</b></button></div>
+<nav id="categories" class="categories" aria-label="Categorías"></nav><section id="menu" class="menu-grid" aria-live="polite"></section>
+</main>
 
-  <main class="container">
-    <div class="toolbar">
-      <label class="search">
-        <span>⌕</span>
-        <input id="search" type="search" placeholder="Buscar en el menú..." autocomplete="off">
-      </label>
-      <button id="cartButton" class="cart-button" type="button">
-        🛒 <span>Pedido</span> <b id="cartCount">0</b>
-      </button>
-    </div>
+<div id="customizer" class="modal" aria-hidden="true"><div class="modal__backdrop" id="customizerBackdrop"></div>
+<section class="modal__box" role="dialog" aria-modal="true">
+<div class="modal__header"><div><p class="eyebrow">PERSONALIZA TU PEDIDO</p><h2 id="customizerTitle">Producto</h2><p id="customizerDescription" class="modal__description"></p></div>
+<button id="closeCustomizer" class="icon-button" type="button">×</button></div>
+<div id="customizerOptions" class="customizer-options"></div>
+<div class="modal__footer"><button id="confirmProduct" class="primary-button" type="button">Agregar al pedido</button></div>
+</section></div>
 
-    <nav id="categories" class="categories" aria-label="Categorías"></nav>
-    <section id="menu" class="menu-grid" aria-live="polite"></section>
-  </main>
-
-  <div id="cartPanel" class="cart-panel" aria-hidden="true">
-    <div class="cart-backdrop" id="cartBackdrop"></div>
-    <aside class="cart">
-      <div class="cart__header">
-        <div>
-          <p class="eyebrow">TU PEDIDO</p>
-          <h2>Resumen</h2>
-        </div>
-        <button id="closeCart" class="icon-button" type="button" aria-label="Cerrar">×</button>
-      </div>
-      <div id="cartItems" class="cart__items"></div>
-      <div class="cart__footer">
-        <div class="total"><span>Total</span><strong id="cartTotal">$0</strong></div>
-        <button id="whatsappButton" class="primary-button" type="button">Pedir por WhatsApp</button>
-        <p class="tiny">Configura el número de WhatsApp en <code>app.js</code> antes de publicar.</p>
-      </div>
-    </aside>
-  </div>
-
-  <footer>
-    <strong>Donde Nacha Fast Food</strong>
-    <span>Menú digital · QR</span>
-  </footer>
-
-  <script src="app.js"></script>
-</body>
-</html>
+<div id="cartPanel" class="cart-panel" aria-hidden="true"><div class="cart-backdrop" id="cartBackdrop"></div>
+<aside class="cart"><div class="cart__header"><div><p class="eyebrow">TU PEDIDO</p><h2>Confirmación</h2></div><button id="closeCart" class="icon-button" type="button">×</button></div>
+<div id="cartItems" class="cart__items"></div>
+<div class="order-data"><h3>Datos para el pedido</h3>
+<label><span>Nombre de la persona</span><input id="customerName" type="text" placeholder="¿A nombre de quién?" autocomplete="name"></label>
+<label><span>Número de contacto</span><input id="customerPhone" type="tel" inputmode="tel" placeholder="Ej. 3001234567" autocomplete="tel"></label>
+<label><span>Tipo de pedido</span><select id="orderType"><option value="Domicilio">🛵 Domicilio</option><option value="Recoger en tienda">🏪 Recoger en tienda</option></select></label>
+<label id="addressField"><span>Dirección de entrega</span><input id="customerAddress" type="text" placeholder="Dirección, barrio y referencias" autocomplete="street-address"></label>
+<label><span>Método de pago</span><select id="paymentMethod"><option value="Efectivo">💵 Efectivo</option><option value="Transferencia">🏦 Transferencia</option></select></label>
+<label><span>Observaciones generales</span><textarea id="orderNotes" rows="2" placeholder="Ej. llamar al llegar..."></textarea></label>
+</div>
+<div class="cart__footer"><div class="total"><span>Total</span><strong id="cartTotal">$0</strong></div>
+<button id="whatsappButton" class="primary-button" type="button">Enviar pedido por WhatsApp</button>
+<p class="tiny">El pedido se abrirá en WhatsApp para enviarlo al número del negocio.</p></div>
+</aside></div>
+<footer><strong>Nacha Fast Food</strong><span>Menú digital · Pedidos por WhatsApp</span></footer>
+<script src="app.js"></script>
+</body></html>
